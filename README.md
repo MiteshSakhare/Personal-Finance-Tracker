@@ -1,6 +1,9 @@
 <img width="963" height="825" alt="image" src="https://github.com/user-attachments/assets/3d51afba-4511-4860-bfb9-fcb776d35563" />
 
 
+<img width="935" height="815" alt="image" src="https://github.com/user-attachments/assets/0d5e24f6-6916-4b74-8656-a997567c4d68" />
+
+
 
 
 Personal Finance Tracker
