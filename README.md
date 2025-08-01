@@ -1,3 +1,8 @@
+<img width="963" height="825" alt="image" src="https://github.com/user-attachments/assets/3d51afba-4511-4860-bfb9-fcb776d35563" />
+
+
+
+
 Personal Finance Tracker
 A modern, responsive personal finance tracking application built with FastAPI backend and React frontend. Track your income, expenses, budgets, and get comprehensive financial insights with a beautiful, mobile-friendly interface.
 
