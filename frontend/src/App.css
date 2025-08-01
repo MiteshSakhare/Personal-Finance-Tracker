@@ -1,0 +1,699 @@
+/* Modern Color Palette and Typography */
+:root {
+  --primary-color: #667eea;
+  --primary-dark: #5a6fd8;
+  --secondary-color: #764ba2;
+  --success-color: #10b981;
+  --success-dark: #059669;
+  --danger-color: #ef4444;
+  --danger-dark: #dc2626;
+  --warning-color: #f59e0b;
+  --info-color: #3b82f6;
+  --light-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --border-radius-sm: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+  background: var(--card-bg);
+  padding: 24px 32px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced Button Styles */
+.reset-btn, .submit-btn, .btn-income, .btn-expense {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px; /* Better touch target for mobile */
+}
+
+.reset-btn {
+  background: linear-gradient(135deg, var(--danger-color), var(--danger-dark));
+  color: white;
+  padding: 12px 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.reset-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--danger-dark), #b91c1c);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.reset-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, var(--success-color), var(--success-dark));
+  color: white;
+  padding: 14px 28px;
+  width: 100%;
+  margin-top: 16px;
+  box-shadow: var(--shadow-md);
+  min-height: 50px; /* Larger touch target */
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, var(--success-dark), #047857);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Income/Expense Button Styles */
+.type-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.btn-income, .btn-expense {
+  flex: 1;
+  padding: 12px 20px;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 48px; /* Better mobile touch target */
+}
+
+.btn-income {
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+  color: #065f46;
+  border-color: var(--success-color);
+}
+
+.btn-income:hover, .btn-income.active {
+  background: linear-gradient(135deg, var(--success-color), var(--success-dark));
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-expense {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  color: #991b1b;
+  border-color: var(--danger-color);
+}
+
+.btn-expense:hover, .btn-expense.active {
+  background: linear-gradient(135deg, var(--danger-color), var(--danger-dark));
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Error and Loading States */
+.error {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  color: var(--danger-color);
+  padding: 16px 24px;
+  border-radius: var(--border-radius);
+  margin-bottom: 24px;
+  text-align: center;
+  border-left: 4px solid var(--danger-color);
+  box-shadow: var(--shadow-sm);
+  font-weight: 500;
+}
+
+.loading {
+  text-align: center;
+  padding: 80px 20px;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  margin: 40px 0;
+}
+
+.loading::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  border: 2px solid var(--primary-color);
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Main Grid Layout */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Dashboard Enhancements */
+.dashboard {
+  grid-column: span 2;
+  background: var(--card-bg);
+  padding: 32px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 16px;
+}
+
+.dashboard h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.summary-card {
+  position: relative;
+  padding: 28px 24px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+}
+
+.summary-card.income {
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+  border-left: 6px solid var(--success-color);
+  color: #065f46;
+}
+
+.summary-card.expense {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  border-left: 6px solid var(--danger-color);
+  color: #991b1b;
+}
+
+.summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.summary-card h3 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.summary-card p {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 8px 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.summary-card small {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Enhanced Form Styling */
+.form-section, .transactions-section {
+  background: var(--card-bg);
+  padding: 32px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.form-section h2, .transactions-section h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.transaction-form {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #fafafa;
+  min-height: 48px; /* Better mobile accessibility */
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Enhanced Table Styling */
+.transaction-list {
+  margin-top: 24px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  min-width: 600px; /* Ensure minimum width for better mobile scrolling */
+}
+
+table th {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  padding: 16px 20px;
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  background: white;
+  transition: background-color 0.2s ease;
+}
+
+table tr:hover td {
+  background: #f8fafc;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+tr.income td {
+  color: var(--success-color);
+  font-weight: 600;
+}
+
+tr.expense td {
+  color: var(--danger-color);
+  font-weight: 600;
+}
+
+/* Mobile Responsive Breakpoints */
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1024px) {
+  .app-container {
+    padding: 16px;
+  }
+  
+  .summary-cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .form-section, .transactions-section {
+    padding: 28px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 968px) {
+  main {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .dashboard {
+    padding: 28px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 12px;
+  }
+
+  header {
+    padding: 20px;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .reset-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .summary-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .summary-card {
+    padding: 24px 20px;
+  }
+
+  .summary-card p {
+    font-size: 2rem;
+  }
+
+  .form-section, .transactions-section {
+    padding: 20px;
+  }
+
+  .form-section h2, .transactions-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .type-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-income, .btn-expense {
+    padding: 16px 24px;
+    font-size: 1.1rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+    min-width: 500px;
+  }
+
+  table th, table td {
+    padding: 12px 10px;
+  }
+
+  .dashboard h2 {
+    font-size: 1.6rem;
+  }
+
+  main {
+    gap: 20px;
+  }
+}
+
+/* Small Mobile Phones */
+@media (max-width: 480px) {
+  .app-container {
+    padding: 8px;
+  }
+
+  header {
+    padding: 16px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .summary-card {
+    padding: 20px 16px;
+  }
+
+  .summary-card p {
+    font-size: 1.8rem;
+  }
+
+  .form-section, .transactions-section {
+    padding: 16px;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 12px 14px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .btn-income, .btn-expense {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+
+  .submit-btn {
+    padding: 16px 24px;
+    font-size: 1rem;
+  }
+
+  table {
+    min-width: 450px;
+    font-size: 0.85rem;
+  }
+
+  table th, table td {
+    padding: 10px 8px;
+  }
+
+  .loading {
+    padding: 40px 16px;
+    font-size: 1.2rem;
+  }
+
+  .error {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra Small Mobile Phones */
+@media (max-width: 375px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .summary-card p {
+    font-size: 1.6rem;
+  }
+
+  .summary-card h3 {
+    font-size: 0.9rem;
+  }
+
+  table {
+    min-width: 400px;
+    font-size: 0.8rem;
+  }
+
+  table th, table td {
+    padding: 8px 6px;
+  }
+
+  .form-section h2, .transactions-section h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  header {
+    flex-direction: row;
+    padding: 16px 20px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  main {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .dashboard {
+    grid-column: span 2;
+    padding: 20px;
+  }
+
+  .summary-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .form-section, .transactions-section {
+    padding: 16px;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .reset-btn:hover, .submit-btn:hover,
+  .btn-income:hover, .btn-expense:hover,
+  .summary-card:hover {
+    transform: none; /* Remove hover transforms on touch devices */
+  }
+  
+  /* Add active states for better touch feedback */
+  .reset-btn:active, .submit-btn:active,
+  .btn-income:active, .btn-expense:active {
+    transform: scale(0.98);
+    opacity: 0.8;
+  }
+}
+
+/* Add subtle animations */
+.summary-card, .form-section, .transactions-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar - Hide on mobile for better UX */
+@media (min-width: 769px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--secondary-color));
+  }
+}
