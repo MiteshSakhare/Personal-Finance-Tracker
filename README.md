@@ -1,4 +1,4 @@
-<img width="963" height="825" alt="image" src="https://github.com/user-attachments/assets/3d51afba-4511-4860-bfb9-fcb776d35563" />
+uyt5redas<img width="963" height="825" alt="image" src="https://github.com/user-attachments/assets/3d51afba-4511-4860-bfb9-fcb776d35563" />
 
 
 <img width="935" height="815" alt="image" src="https://github.com/user-attachments/assets/0d5e24f6-6916-4b74-8656-a997567c4d68" />
@@ -37,34 +37,45 @@ npm or yarn
 Backend Setup
 Clone the repository
 
-bash
+bash:
+
 git clone <repository-url>
 cd finance-tracker
 Set up the backend
 
-bash
+bash:
+
 cd backend
 
-# Install dependencies
+# Install dependencies:
+
 pip install -r requirements.txt
 
-# Start the FastAPI server
+# Start the FastAPI server:
+
 uvicorn main:app --reload
+
 The backend API will be available at: http://localhost:8000
 API Documentation: http://localhost:8000/docs
 
-Frontend Setup
+Frontend Setup:
 Set up the frontend
 
-bash
+bash:
+
 cd frontend
 
-# Install dependencies
+# Install dependencies:
+
 npm install
 
-# Start the React development server
+# Start the React development server:
+
 npm start
+
 The frontend will be available at: http://localhost:3000
+
+
 
 📁 Project Structure
 text
@@ -90,6 +101,10 @@ finance-tracker/
 │   │   └── index.js         # React entry point
 │   └── package.json         # Node.js dependencies
 └── README.md
+
+
+
+
 🛠️ Technology Stack
 Backend
 FastAPI - Modern, fast web framework for Python
@@ -139,6 +154,8 @@ fetch('http://localhost:8000/transactions/', {
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(transaction)
 });
+
+
 📱 Mobile Responsive Design
 The application is fully responsive with breakpoints for:
 
